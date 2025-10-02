@@ -13,7 +13,9 @@ from optax._src import linesearch as _linesearch
 from optax._src import transform
 from optax._src import utils
 from optax._src import wrappers
+from optax._src import base
 
+AddDecayedWeightsState = base.EmptyState
 
 def add_decayed_weights(
     weight_decay: Union[float, jax.Array] = 0.0,
@@ -51,6 +53,29 @@ def add_decayed_weights(
   return base.GradientTransformation(init_fn, update_fn)
 
 
+def adam(
+    learning_rate: base.ScalarOrSchedule,
+    b1: float = 0.9,
+    b2: float = 0.999,
+    eps: float = 1e-8,
+    eps_root: float = 0.0,
+    mu_dtype: Optional[Any] = None,
+    *,
+    nesterov: bool = False,
+) -> base.GradientTransformationExtraArgs:
+    """ See optax/_src/alias.py """
+    return combine.chain(
+      transform.scale_by_adam(
+          b1=b1,
+          b2=b2,
+          eps=eps,
+          eps_root=eps_root,
+          mu_dtype=mu_dtype,
+          nesterov=nesterov,
+      ),
+      transform.scale_by_learning_rate(learning_rate),
+    )
+
 def adamw(
     learning_rate: base.ScalarOrSchedule,
     b1: float = 0.9,
@@ -63,8 +88,9 @@ def adamw(
     *,
     nesterov: bool = False,
 ) -> base.GradientTransformationExtraArgs:
+    """ See optax/_src/alias.py """
 
-  return combine.chain(
+    return combine.chain(
       transform.scale_by_adam(
           b1=b1,
           b2=b2,
@@ -75,5 +101,5 @@ def adamw(
       ),
       add_decayed_weights(weight_decay, mask),
       transform.scale_by_learning_rate(learning_rate),
-  )
+    )
 

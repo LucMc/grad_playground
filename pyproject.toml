@@ -88,7 +88,7 @@ all = [
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["mujoco_playground"]
+packages = ["mujoco_playground", "optim", "learning"]
 
 [tool.ruff]
 lint.select = [
