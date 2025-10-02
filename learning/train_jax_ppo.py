@@ -39,6 +39,9 @@ from mujoco_playground import wrapper
 from mujoco_playground.config import dm_control_suite_params
 from mujoco_playground.config import locomotion_params
 from mujoco_playground.config import manipulation_params
+from mujoco_playground.optim import adamw
+from learning.train import train
+
 import tensorboardX
 import wandb
 
@@ -362,7 +365,7 @@ def main(argv):
     del training_params["num_eval_envs"]
 
   train_fn = functools.partial(
-      ppo.train,
+      train,
       **training_params,
       network_factory=network_factory,
       seed=_SEED.value,

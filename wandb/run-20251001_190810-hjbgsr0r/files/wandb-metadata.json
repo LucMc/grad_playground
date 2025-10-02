@@ -1,0 +1,44 @@
+{
+  "os":  "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python":  "CPython 3.11.0rc1",
+  "startedAt":  "2025-10-01T18:08:10.186297Z",
+  "args":  [
+    "--env_name",
+    "Go1JoystickFlatTerrain",
+    "--use_wandb"
+  ],
+  "program":  "/home/dook/mujoco_playground/learning/train_jax_ppo.py",
+  "codePath":  "learning/train_jax_ppo.py",
+  "codePathLocal":  "learning/train_jax_ppo.py",
+  "git":  {
+    "remote":  "https://github.com/google-deepmind/mujoco_playground.git",
+    "commit":  "8356c84f3b682f2e5602f131fa4eec831632498c"
+  },
+  "email":  "lucmccutcheon.home@gmail.com",
+  "root":  "/home/dook/mujoco_playground",
+  "host":  "DESKTOP-MPAPUU0",
+  "executable":  "/home/dook/grad_decay/.venv/bin/python3",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce RTX 3080",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1081101176832",
+      "used":  "171408273408"
+    }
+  },
+  "memory":  {
+    "total":  "33603907584"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3080",
+      "memoryTotal":  "10737418240",
+      "architecture":  "Ampere",
+      "uuid":  "GPU-0a89f444-1e36-a486-2588-e6c6382b12be"
+    }
+  ],
+  "cudaVersion":  "12.6",
+  "writerId":  "cfocujm9gofcuy7ahnzaae46xec9izyi"
+}

@@ -1,0 +1,108 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/CheetahRun-20251002-171404/checkpoints
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 518, in <module>
+    app.run(main)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 438, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 397, in train
+    env_state = reset_fn(key_envs)
+  File "/home/dook/mujoco_playground/mujoco_playground/_src/wrapper.py", line 157, in reset
+    state = self.env.reset(key)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/brax/envs/wrappers/training.py", line 84, in reset
+    state = self.env.reset(rng)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/brax/envs/wrappers/training.py", line 69, in reset
+    return jax.vmap(self.env.reset)(rng)
+  File "/home/dook/mujoco_playground/mujoco_playground/_src/dm_control_suite/cheetah.py", line 94, in reset
+    data = mjx.forward(self.mjx_model, data)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/forward.py", line 63, in wrapper
+    res = fn(*args, **kwargs)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/forward.py", line 438, in forward
+    d = fwd_position(m, d)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/forward.py", line 63, in wrapper
+    res = fn(*args, **kwargs)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/forward.py", line 74, in fwd_position
+    d = smooth.com_pos(m, d)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/smooth.py", line 204, in com_pos
+    cdof = scan.flat(
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/scan.py", line 295, in flat
+    f_args = [_take(arg, typ_ids[typ]) for arg, typ in zip(args, in_types)]
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/scan.py", line 295, in <listcomp>
+    f_args = [_take(arg, typ_ids[typ]) for arg, typ in zip(args, in_types)]
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/scan.py", line 65, in _take
+    return jax.tree_util.tree_map(take, obj)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mujoco/mjx/_src/scan.py", line 60, in take
+    x = x[idx[0] : idx[-1] + 1]
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/numpy/array_methods.py", line 1141, in op
+    return getattr(self.aval, f"_{name}")(self, *args)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/numpy/array_methods.py", line 678, in _getitem
+    return indexing.rewriting_take(self, item)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/numpy/indexing.py", line 640, in rewriting_take
+    result = _attempt_rewriting_take_via_slice(arr, idx, mode, out_sharding)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/numpy/indexing.py", line 603, in _attempt_rewriting_take_via_slice
+    arr = slicing.slice(
+jax._src.source_info_util.JaxStackTraceBeforeTransformation: KeyboardInterrupt
+
+The preceding stack trace is the source of the JAX operation that, once transformed by JAX, triggered the following exception.
+
+--------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 518, in <module>
+    app.run(main)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 438, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 397, in train
+    env_state = reset_fn(key_envs)
+                ^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 180, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/api.py", line 1695, in cache_miss
+    execute, const_args = pxla.xla_pmap_impl_lazy(p.flat_fun, *p.flat_args, **params)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 367, in xla_pmap_impl_lazy
+    compiled_fun, fingerprint, const_args = parallel_callable(
+                                            ^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/linear_util.py", line 504, in memoized_fun
+    ans = call(fun, *args)
+          ^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 649, in parallel_callable
+    pmap_computation = lower_parallel_callable(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 364, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 938, in lower_parallel_callable
+    lowering_result = mlir.lower_jaxpr_to_module(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 1375, in lower_jaxpr_to_module
+    lower_jaxpr_to_fun(
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 1925, in lower_jaxpr_to_fun
+    out_vals, tokens_out = jaxpr_subcomp(
+                           ^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 2153, in jaxpr_subcomp
+    out_nodes, tokens_out = _cached_lowering(
+                            ^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 2222, in _cached_lowering
+    cache_entry = _emit_lowering_rule_as_fun(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 2268, in _emit_lowering_rule_as_fun
+    input_types = map(aval_to_ir_type, const_arg_avals + avals_in)  # type: ignore
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py", line 213, in aval_to_ir_type
+    def aval_to_ir_type(aval: core.AbstractValue) -> IrTypes:
+
+KeyboardInterrupt

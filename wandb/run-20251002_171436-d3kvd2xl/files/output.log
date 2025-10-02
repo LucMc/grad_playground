@@ -1,0 +1,29 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/CheetahRun-20251002-171436/checkpoints
+0: reward=3.368
+W1002 17:25:13.352212 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+98304000: reward=909.904
+W1002 17:33:02.566475 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+196608000: reward=916.360
+W1002 17:40:48.911887 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+294912000: reward=912.334
+W1002 17:48:44.044070 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+393216000: reward=919.492
+W1002 17:56:27.728545 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=5] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+491520000: reward=915.844
+W1002 18:04:13.642421 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=6] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+589824000: reward=916.600
+W1002 18:41:47.003572 132326504194048 future.py:319] [process=0][thread=MainThread][operation_id=7] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+688128000: reward=921.142
+Exception ignored in: <function _xla_gc_callback at 0x7859aa0f8d60>
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/lib/__init__.py", line 127, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+
+KeyboardInterrupt:
+Exception ignored in: <function _xla_gc_callback at 0x7859aa0f8d60>
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/jax/_src/lib/__init__.py", line 127, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+
+KeyboardInterrupt:

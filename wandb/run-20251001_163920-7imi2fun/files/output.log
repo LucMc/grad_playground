@@ -1,0 +1,79 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/Go1JoystickFlatTerrain-20251001-163919/checkpoints
+0: reward=0.002
+W1001 17:55:11.694907 126034551705600 future.py:319] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+22937600: reward=18.179
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 518, in <module>
+    app.run(main)
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 438, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 707, in train
+    training_epoch_with_timing(training_state, env_state, epoch_keys)
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 581, in training_epoch_with_timing
+    training_state, env_state, metrics = _strip_weak_type(result)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 73, in _strip_weak_type
+    return jax.tree_util.tree_map(f, tree)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 362, in tree_map
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 362, in <genexpr>
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                             ^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 71, in f
+    return jnp.astype(leaf, leaf.dtype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5370, in astype
+    result = lax_internal._convert_element_type(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 1726, in _convert_element_type
+    return convert_element_type_p.bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/core.py", line 536, in bind
+    return self._true_bind(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/core.py", line 552, in _true_bind
+    return self.bind_with_trace(prev_trace, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 4902, in _convert_element_type_bind_with_trace
+    operand = core.Primitive.bind_with_trace(convert_element_type_p, trace, args, params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/core.py", line 562, in bind_with_trace
+    return trace.process_primitive(self, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/core.py", line 1066, in process_primitive
+    return primitive.impl(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/dispatch.py", line 91, in apply_primitive
+    outs = fun(*args)
+           ^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 3172, in cc_shard_arg
+    return shard_args([sharding], [layout], [None], [x])[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 354, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 137, in shard_args
+    return shard_arg_handlers[type(arg)]([arg], shardings, layouts,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 1229, in _array_shard_arg
+    shard_sharded_device_array_slow_path(x, devices, indices, sharding))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 1172, in shard_sharded_device_array_slow_path
+    return pxla.shard_args([sharding], [None], [None], [x._value],
+                                                        ^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 354, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/grad_decay/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 667, in _value
+    npy_value[ind], _ = self._arrays[i]._single_device_array_to_np_array_did_copy()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

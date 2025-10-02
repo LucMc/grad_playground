@@ -1,0 +1,45 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/CheetahRun-20251002-160753/checkpoints
+0: reward=3.368
+W1002 16:11:28.143257 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+9830400: reward=294.480
+W1002 16:12:19.443207 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+19660800: reward=553.817
+W1002 16:13:10.116734 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+29491200: reward=584.288
+W1002 16:14:02.366218 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+39321600: reward=738.408
+W1002 16:14:54.553990 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=5] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+49152000: reward=808.107
+W1002 16:15:47.322273 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=6] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+58982400: reward=861.895
+W1002 16:16:38.654242 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=7] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+68812800: reward=184.989
+W1002 16:17:30.121316 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=8] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+78643200: reward=77.898
+W1002 16:18:23.499473 137909742137344 future.py:319] [process=0][thread=MainThread][operation_id=9] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+88473600: reward=144.676
+Done training.
+Time to JIT compile: 119.7137871110026
+Time to train: 512.5823506089982
+Starting inference...
+FPS for rendering: 50.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [00:31<00:00, 15.92it/s]
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 518, in <module>
+    app.run(main)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 513, in main
+    media.write_video(f"rollout{i}.mp4", frames, fps=fps)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mediapy/__init__.py", line 1758, in write_video
+    with VideoWriter(path, shape=shape, dtype=dtype, **kwargs) as writer:
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mediapy/__init__.py", line 1578, in __enter__
+    ffmpeg_path = _get_ffmpeg_path()
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/mediapy/__init__.py", line 1170, in _get_ffmpeg_path
+    raise RuntimeError(
+RuntimeError: Program 'ffmpeg' is not found; perhaps install ffmpeg using 'apt install ffmpeg'.
