@@ -64,6 +64,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning, module="jax")
 warnings.filterwarnings("ignore", category=UserWarning, module="absl")
 
 
+_OPTIM = flags.DEFINE_enum("impl", "adam", ["adam", "adamw"], "Optimizer")
 _ENV_NAME = flags.DEFINE_string(
     "env_name",
     "LeapCubeReorient",
@@ -208,6 +209,7 @@ def main(argv):
   # Load environment configuration
   env_cfg = registry.get_default_config(_ENV_NAME.value)
   env_cfg["impl"] = _IMPL.value
+  env_cfg["optim"] = _OPTIM.value
 
   ppo_params = get_rl_config(_ENV_NAME.value)
 
@@ -372,6 +374,7 @@ def main(argv):
       save_checkpoint_path=ckpt_path,
       wrap_env_fn=None if _VISION.value else wrapper.wrap_for_brax_training,
       num_eval_envs=num_eval_envs,
+      optim=env_cfg["optim"]
   )
 
   times = [time.monotonic()]

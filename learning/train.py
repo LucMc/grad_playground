@@ -245,6 +245,7 @@ def train(
     restore_params: Optional[Any] = None,
     restore_value_fn: bool = True,
     run_evals: bool = True,
+    optim: Literal["adam", "adamw"] = "adam" # <- Optimizer configuration
 ):
   """PPO training.
 
@@ -409,7 +410,13 @@ def train(
   make_policy = ppo_networks.make_inference_fn(ppo_network)
 
   # optimizer = optax.adam(learning_rate=learning_rate)
-  optimizer = optim.adamw(learning_rate=learning_rate)
+
+  ## Optimizer Configuration
+  if optim == "adam":
+    optimizer = optim.adam(learning_rate=learning_rate)
+
+  elif optim == "adamw":
+    optimizer = optim.adamw(learning_rate=learning_rate)
 
   if max_grad_norm is not None:
     # TODO(btaba): Move gradient clipping to `training/gradients.py`.

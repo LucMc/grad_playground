@@ -1,0 +1,19 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/LeapCubeReorient-20251003-120522/checkpoints
+0: reward=-8.240
+W1003 12:23:54.622308 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+42270720: reward=175.571
+W1003 12:39:22.082258 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+84541440: reward=232.793
+W1003 12:54:50.781959 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+126812160: reward=363.150
+W1003 13:10:15.720408 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+169082880: reward=473.551
+W1003 13:25:40.759765 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=5] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+211353600: reward=559.764
+W1003 13:41:07.230472 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=6] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+253624320: reward=623.724
+W1003 13:56:41.699751 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=7] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+295895040: reward=665.238
+W1003 14:12:23.271404 136451733495808 future.py:319] [process=0][thread=MainThread][operation_id=8] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+338165760: reward=687.680
