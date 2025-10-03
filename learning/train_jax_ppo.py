@@ -64,7 +64,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning, module="jax")
 warnings.filterwarnings("ignore", category=UserWarning, module="absl")
 
 
-_OPTIM = flags.DEFINE_enum("impl", "adam", ["adam", "adamw"], "Optimizer")
+_OPTIM = flags.DEFINE_enum("optim", "adam", ["adam", "adamw"], "Optimizer")
 _ENV_NAME = flags.DEFINE_string(
     "env_name",
     "LeapCubeReorient",
