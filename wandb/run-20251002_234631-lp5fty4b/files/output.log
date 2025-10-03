@@ -1,0 +1,37 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/logs/LeapCubeReorient-20251002-234631/checkpoints
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 70ca803 load on device 'cuda:0' took 7505.01 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.collision_driver d1d21fe load on device 'cuda:0' took 420.70 ms  (compiled)
+Module _nxn_broadphase__locals__kernel_ec7aaaa8 ec7aaaa load on device 'cuda:0' took 748.31 ms  (compiled)
+Module _primitive_narrowphase_builder__locals___primitive_narrowphase_f6995038 2e13db5 load on device 'cuda:0' took 3474.00 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint ac9e3a1 load on device 'cuda:0' took 3279.22 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor 0c0b0e5 load on device 'cuda:0' took 6467.14 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 4003be6 load on device 'cuda:0' took 1415.21 ms  (compiled)
+Module _actuator_velocity__locals__actuator_velocity_e37be1d8 57c80b7 load on device 'cuda:0' took 427.43 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive 123e0f6 load on device 'cuda:0' took 1541.86 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.support 9e4f16a load on device 'cuda:0' took 659.11 ms  (compiled)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_517831bc 517831b load on device 'cuda:0' took 4621.48 ms  (compiled)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_73acc94e 73acc94 load on device 'cuda:0' took 4061.01 ms  (compiled)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 69793be load on device 'cuda:0' took 3322.59 ms  (compiled)
+Module mul_m_dense__locals__kernel_3662711d 3662711 load on device 'cuda:0' took 14993.40 ms  (compiled)
+Module mul_m_dense__locals__kernel_7ee1afb4 7ee1afb load on device 'cuda:0' took 14583.42 ms  (compiled)
+Module update_constraint_gauss_cost__locals__kernel_bdb00a5a bdb00a5 load on device 'cuda:0' took 389.74 ms  (compiled)
+Module update_gradient_cholesky__locals__kernel_c95c9b5c f06593a load on device 'cuda:0' took 4700.81 ms  (compiled)
+Module linesearch_jv_fused__locals__kernel_78ef0a05 78ef0a0 load on device 'cuda:0' took 376.58 ms  (compiled)
+Traceback (most recent call last):
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 520, in <module>
+    app.run(main)
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/.venv/lib/python3.12/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/.venv/lib/python3.12/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 440, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train.py", line 399, in train
+    env_state = reset_fn(key_envs)
+                ^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 2430074880 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

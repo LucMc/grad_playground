@@ -1,0 +1,11 @@
+[CudaDevice(id=0)]
+Warp 1.10.0.dev20251002 initialized:
+   Git commit: 74b7ce11053456896a73e2350b4edd480d695f7f
+   CUDA Toolkit 12.8, Driver 12.6
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3090" (24 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /mnt/fast/nobackup/users/lm01065/.cache/warp/1.10.0.dev20251002
+True
+Running

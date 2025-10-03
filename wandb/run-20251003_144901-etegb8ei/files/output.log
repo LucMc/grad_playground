@@ -1,0 +1,17 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/logs/LeapCubeReorient-20251003-144901/checkpoints
+Traceback (most recent call last):
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 523, in <module>
+    app.run(main)
+  File "/mnt/fast/nobackup/users/lm01065/.venv/lib/python3.12/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/mnt/fast/nobackup/users/lm01065/.venv/lib/python3.12/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 443, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train.py", line 440, in train
+    loss_fn, optimizer, pmap_axis_name=_PMAP_AXIS_NAME, has_aux=True
+             ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'optimizer' where it is not associated with a value

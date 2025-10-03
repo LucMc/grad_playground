@@ -1,0 +1,134 @@
+wandb: Currently logged in as: lucmc (cavlab) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.22.1
+wandb: Run data is saved locally in /mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/wandb/run-20251003_135245-v2xzu3vp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run LeapCubeReorient-20251003-135244
+wandb: ⭐️ View project at https://wandb.ai/cavlab/mjxrl
+wandb: 🚀 View run at https://wandb.ai/cavlab/mjxrl/runs/v2xzu3vp
+E1003 13:52:59.507717  230113 gpu_hlo_schedule.cc:817] The byte size of input/output arguments (21061684802) exceeds the base limit (18995773440). This indicates an error in the calculation!
+W1003 13:52:59.588309  230113 hlo_rematerialization.cc:3198] Can't reduce memory use below 19.61GiB (21061619266 bytes) by rematerialization; only reduced to 19.62GiB (21062807198 bytes), down from 19.62GiB (21063102326 bytes) originally
+W1003 13:53:12.134728  230113 bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 219.38MiB (rounded to 230031360)requested by op 
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+W1003 13:53:12.135711  230113 bfc_allocator.cc:512] ****************************************************************************************************
+E1003 13:53:12.135878  230113 pjrt_stream_executor_client.cc:3314] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 230031360 bytes. [tf-allocator-allocation-error='']
+Warp 1.10.0.dev20251002 initialized:
+   Git commit: 74b7ce11053456896a73e2350b4edd480d695f7f
+   CUDA Toolkit 12.8, Driver 12.6
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3090" (24 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /mnt/fast/nobackup/users/lm01065/.cache/warp/1.10.0.dev20251002
+Environment Config:
+action_repeat: 1
+action_scale: 0.5
+ctrl_dt: 0.05
+ema_alpha: 1.0
+episode_length: 1000
+history_len: 1
+impl: warp
+nconmax: 245760
+njmax: 128
+obs_noise:
+  level: 1.0
+  random_ori_injection_prob: 0.0
+  scales:
+    cube_ori: 0.1
+    cube_pos: 0.02
+    joint_pos: 0.05
+pert_config:
+  angular_velocity_pert:
+  - 0.0
+  - 0.5
+  enable: false
+  linear_velocity_pert:
+  - 0.0
+  - 3.0
+  pert_duration_steps:
+  - 1
+  - 100
+  pert_wait_steps:
+  - 60
+  - 150
+reward_config:
+  scales:
+    action_rate: -0.001
+    energy: -0.001
+    hand_pose: -0.5
+    joint_vel: 0.0
+    orientation: 5.0
+    position: 0.5
+    termination: -100.0
+  success_reward: 100.0
+sim_dt: 0.01
+success_threshold: 0.1
+
+PPO Training Parameters:
+action_repeat: 1
+batch_size: 256
+discounting: 0.99
+entropy_cost: 0.01
+episode_length: 1000
+learning_rate: 0.0003
+network_factory:
+  policy_hidden_layer_sizes: &id001 !!python/tuple
+  - 512
+  - 256
+  - 128
+  policy_obs_key: state
+  value_hidden_layer_sizes: *id001
+  value_obs_key: privileged_state
+normalize_observations: true
+num_envs: 8192
+num_evals: 20
+num_minibatches: 32
+num_resets_per_eval: 1
+num_timesteps: 800000000
+num_updates_per_batch: 4
+reward_scaling: 1.0
+unroll_length: 40
+
+Experiment name: LeapCubeReorient-20251003-135244
+Logs are being stored in: /mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/logs/LeapCubeReorient-20251003-135244
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/logs/LeapCubeReorient-20251003-135244/checkpoints
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 70ca803 load on device 'cuda:0' took 7.92 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.collision_driver d1d21fe load on device 'cuda:0' took 1.36 ms  (cached)
+Module _nxn_broadphase__locals__kernel_ec7aaaa8 ec7aaaa load on device 'cuda:0' took 1.29 ms  (cached)
+Module _primitive_narrowphase_builder__locals___primitive_narrowphase_f6995038 2e13db5 load on device 'cuda:0' took 1.75 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint ac9e3a1 load on device 'cuda:0' took 2.06 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor 0c0b0e5 load on device 'cuda:0' took 12.16 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 4003be6 load on device 'cuda:0' took 1.69 ms  (cached)
+Module _actuator_velocity__locals__actuator_velocity_e37be1d8 57c80b7 load on device 'cuda:0' took 1.30 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive 123e0f6 load on device 'cuda:0' took 1.38 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support 9e4f16a load on device 'cuda:0' took 1.52 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_517831bc 517831b load on device 'cuda:0' took 34.53 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_73acc94e 73acc94 load on device 'cuda:0' took 31.54 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 69793be load on device 'cuda:0' took 2.13 ms  (cached)
+Module mul_m_dense__locals__kernel_3662711d 3662711 load on device 'cuda:0' took 46.40 ms  (cached)
+Module mul_m_dense__locals__kernel_7ee1afb4 7ee1afb load on device 'cuda:0' took 47.60 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_bdb00a5a bdb00a5 load on device 'cuda:0' took 1.46 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_c95c9b5c f06593a load on device 'cuda:0' took 32.63 ms  (cached)
+Module linesearch_jv_fused__locals__kernel_78ef0a05 78ef0a0 load on device 'cuda:0' took 1.53 ms  (cached)
+Traceback (most recent call last):
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 520, in <module>
+    app.run(main)
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/.venv/lib/python3.12/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/.venv/lib/python3.12/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 440, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train.py", line 399, in train
+    env_state = reset_fn(key_envs)
+                ^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 230031360 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mLeapCubeReorient-20251003-135244[0m at: [34m[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20251003_135245-v2xzu3vp/logs[0m
