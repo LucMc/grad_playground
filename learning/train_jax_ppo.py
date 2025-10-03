@@ -374,7 +374,7 @@ def main(argv):
       save_checkpoint_path=ckpt_path,
       wrap_env_fn=None if _VISION.value else wrapper.wrap_for_brax_training,
       num_eval_envs=num_eval_envs,
-      optim=env_cfg["optim"]
+      optim_cfg=env_cfg["optim"]
   )
 
   times = [time.monotonic()]

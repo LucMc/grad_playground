@@ -45,5 +45,5 @@ python -c "import jax;print(jax.devices())"
 python -c "import warp;print(warp.is_cuda_available())"
 # --- Run experiment ---
 echo "Running"
-python "learning/train_jax_ppo.py" --use_wandb --impl=warp --num_timesteps=800000000 > "$output_filename" 2>&1
+python "learning/train_jax_ppo.py" --use_wandb --num_timesteps=800000000 > "$output_filename" 2>&1
 

@@ -18,3 +18,20 @@ Module mul_m_dense__locals__kernel_7ee1afb4 7ee1afb load on device 'cuda:0' took
 Module update_constraint_gauss_cost__locals__kernel_bdb00a5a bdb00a5 load on device 'cuda:0' took 0.72 ms  (cached)
 Module update_gradient_cholesky__locals__kernel_c95c9b5c f06593a load on device 'cuda:0' took 33.63 ms  (cached)
 Module linesearch_jv_fused__locals__kernel_78ef0a05 78ef0a0 load on device 'cuda:0' took 0.74 ms  (cached)
+Traceback (most recent call last):
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 523, in <module>
+    app.run(main)
+  File "/mnt/fast/nobackup/users/lm01065/.venv/lib/python3.12/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/mnt/fast/nobackup/users/lm01065/.venv/lib/python3.12/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train_jax_ppo.py", line 443, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/fast/nobackup/users/lm01065/grad_decay/grad_playground/learning/train.py", line 400, in train
+    env_state = reset_fn(key_envs)
+                ^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 230031360 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

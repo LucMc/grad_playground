@@ -245,7 +245,7 @@ def train(
     restore_params: Optional[Any] = None,
     restore_value_fn: bool = True,
     run_evals: bool = True,
-    optim: Literal["adam", "adamw"] = "adam" # <- Optimizer configuration
+    optim_cfg: Literal["adam", "adamw"] = "adam" # <- Optimizer configuration
 ):
   """PPO training.
 
@@ -412,11 +412,15 @@ def train(
   # optimizer = optax.adam(learning_rate=learning_rate)
 
   ## Optimizer Configuration
-  if optim == "adam":
+  if optim_cfg == "adam":
     optimizer = optim.adam(learning_rate=learning_rate)
 
-  elif optim == "adamw":
+  elif optim_cfg == "adamw":
     optimizer = optim.adamw(learning_rate=learning_rate)
+    
+  else: # FIX
+    raise "Optimizer not recognized"
+
 
   if max_grad_norm is not None:
     # TODO(btaba): Move gradient clipping to `training/gradients.py`.
