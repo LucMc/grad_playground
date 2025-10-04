@@ -63,8 +63,9 @@ warnings.filterwarnings("ignore", category=DeprecationWarning, module="jax")
 # Suppress UserWarnings from absl (used by JAX and TensorFlow)
 warnings.filterwarnings("ignore", category=UserWarning, module="absl")
 
+OPTIMIZERS = ["adam", "adamw", "adam_gwd"]
 
-_OPTIM = flags.DEFINE_enum("optim", "adam", ["adam", "adamw"], "Optimizer")
+_OPTIM = flags.DEFINE_enum("optim", "adam", OPTIMIZERS, "Optimizer")
 _ENV_NAME = flags.DEFINE_string(
     "env_name",
     "LeapCubeReorient",

@@ -1,0 +1,48 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/LeapCubeReorient-20251004-155605/checkpoints
+0: reward=-8.510
+W1004 16:14:57.883403 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+42270720: reward=171.258
+W1004 16:31:03.109420 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+84541440: reward=187.509
+W1004 16:47:10.689024 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+126812160: reward=309.639
+W1004 17:03:21.218513 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+169082880: reward=430.885
+W1004 17:19:23.129210 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=5] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+211353600: reward=531.356
+W1004 17:35:30.179564 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=6] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+253624320: reward=596.953
+W1004 17:51:26.567394 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=7] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+295895040: reward=615.380
+W1004 18:07:37.579913 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=8] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+338165760: reward=702.143
+W1004 18:23:17.301204 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=9] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+380436480: reward=711.927
+W1004 18:39:03.152011 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=10] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+422707200: reward=738.792
+W1004 18:54:47.628011 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=11] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+464977920: reward=756.699
+W1004 19:10:35.049449 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=12] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+507248640: reward=763.172
+W1004 19:26:43.544705 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=13] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+549519360: reward=777.960
+W1004 19:42:37.462179 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=14] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+591790080: reward=799.326
+W1004 19:58:39.334204 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=15] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+634060800: reward=802.431
+W1004 20:14:28.147474 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=16] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+676331520: reward=817.278
+W1004 20:30:03.682789 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=17] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+718602240: reward=855.719
+W1004 20:46:08.322801 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=18] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+760872960: reward=817.137
+W1004 21:02:32.527430 139994408374272 future.py:319] [process=0][thread=MainThread][operation_id=19] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+803143680: reward=811.829
+Done training.
+Time to JIT compile: 97.79350277999998
+Time to train: 18314.630364167
+Starting inference...
+FPS for rendering: 10.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [00:11<00:00, 45.18it/s]
+Rollout video saved as 'rollout0.mp4'.

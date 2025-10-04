@@ -1,0 +1,26 @@
+No checkpoint path provided, not restoring from checkpoint
+Checkpoint path: /home/dook/mujoco_playground/logs/LeapCubeReorient-20251004-213445/checkpoints
+Traceback (most recent call last):
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 524, in <module>
+    app.run(main)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/home/dook/mujoco_playground/learning/train_jax_ppo.py", line 444, in main
+    make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/learning/train.py", line 628, in train
+    optimizer_state=optimizer.init(init_params),  # pytype: disable=wrong-arg-types  # numpy-scalars
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/optax/transforms/_combining.py", line 79, in init_fn
+    return tuple(fn(params) for fn in init_fns)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dook/mujoco_playground/.venv/lib/python3.11/site-packages/optax/transforms/_combining.py", line 79, in <genexpr>
+    return tuple(fn(params) for fn in init_fns)
+                 ^^^^^^^^^^
+  File "/home/dook/mujoco_playground/optim/adam.py", line 37, in init_fn
+    return AddDecayedWeightsState()
+           ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'AddDecayedWeightsState' is not defined

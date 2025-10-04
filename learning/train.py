@@ -245,7 +245,7 @@ def train(
     restore_params: Optional[Any] = None,
     restore_value_fn: bool = True,
     run_evals: bool = True,
-    optim_cfg: Literal["adam", "adamw"] = "adam" # <- Optimizer configuration
+    optim_cfg: str = "adam" # <- Optimizer configuration
 ):
   """PPO training.
 
@@ -418,6 +418,9 @@ def train(
   elif optim_cfg == "adamw":
     optimizer = optim.adamw(learning_rate=learning_rate)
     
+  elif optim_cfg == "adam_gwd":
+    optimizer = optim.adam_gwd(learning_rate=learning_rate)
+
   else: # FIX
     raise "Optimizer not recognized"
 
